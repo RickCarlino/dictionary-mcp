@@ -1,117 +1,126 @@
-# Setting up Dictionary MCP with Claude Desktop and Claude Code
+# Dictionary MCP Setup Guide
 
-## Quick Setup
+This guide explains how to set up the Dictionary MCP server with Claude Desktop and Claude Code.
 
-1. **Build the server** (already done):
+## Table of Contents
 
-   ```bash
-   bun run build
-   ```
+- [Prerequisites](#prerequisites)
+- [Claude Desktop Setup](#claude-desktop-setup)
+  - [1. Locate your configuration file](#1-locate-your-configuration-file)
+  - [2. Add the Dictionary MCP server](#2-add-the-dictionary-mcp-server)
+  - [3. Alternative runtime options](#3-alternative-runtime-options)
+  - [4. Restart Claude Desktop](#4-restart-claude-desktop)
+  - [5. Verify the connection](#5-verify-the-connection)
+- [Claude Code Setup](#claude-code-setup)
+  - [Installation options](#installation-options)
+  - [Managing the server](#managing-the-server)
+- [Troubleshooting](#troubleshooting)
+  - [Common issues](#common-issues)
+  - [Platform-specific notes](#platform-specific-notes)
+  - [Debugging](#debugging)
 
-2. **Find your Claude Desktop configuration file**:
+## Prerequisites
 
-   - Linux: `~/.config/Claude/claude_desktop_config.json`
-   - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+- Built the server by running `bun run build`
+- Created the database directory: `mkdir -p ~/.local/share/dictionary-mcp`
 
-3. **Add the Dictionary MCP server** to your `claude_desktop_config.json`:
+## Claude Desktop Setup
 
-   ```json
-   {
-     "mcpServers": {
-       "dictionary": {
-         "command": "/home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64",
-         "args": [],
-         "env": {
-           "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
-         }
-       }
-     }
-   }
-   ```
+### 1. Locate your configuration file
 
-4. **Create the database directory**:
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
-   ```bash
-   mkdir -p ~/.local/share/dictionary-mcp
-   ```
+### 2. Add the Dictionary MCP server
 
-5. **Restart Claude Desktop** to load the new MCP server
+Edit your `claude_desktop_config.json` file:
 
-## Alternative Configurations
+```json
+{
+  "mcpServers": {
+    "dictionary": {
+      "command": "/path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64",
+      "args": [],
+      "env": {
+        "DATABASE_PATH": "~/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  }
+}
+```
 
-### Using Bun (if you have Bun installed):
+**Note**: Replace `/path/to/dictionary-mcp` with the actual path to your project directory.
 
+### 3. Alternative runtime options
+
+#### Using Bun (if installed):
 ```json
 {
   "mcpServers": {
     "dictionary": {
       "command": "bun",
-      "args": ["run", "/home/rick/code/dictionary-mcp/dist/index.bun.js"],
+      "args": ["run", "/path/to/dictionary-mcp/dist/index.bun.js"],
       "env": {
-        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+        "DATABASE_PATH": "~/.local/share/dictionary-mcp/dictionary.db"
       }
     }
   }
 }
 ```
 
-### Using Node.js (if you have Node.js installed):
-
+#### Using Node.js (if installed):
 ```json
 {
   "mcpServers": {
     "dictionary": {
       "command": "node",
-      "args": ["/home/rick/code/dictionary-mcp/dist/index.node.js"],
+      "args": ["/path/to/dictionary-mcp/dist/index.node.js"],
       "env": {
-        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+        "DATABASE_PATH": "~/.local/share/dictionary-mcp/dictionary.db"
       }
     }
   }
 }
 ```
 
-## Testing the Connection
+### 4. Restart Claude Desktop
 
-After restarting Claude Desktop, you can test the connection by:
+After saving the configuration, restart Claude Desktop to load the MCP server.
 
-1. Opening Claude Desktop
-2. Using the `/mcp` command - it should show "dictionary" as an available server
-3. Try using a dictionary tool like creating a new dictionary
+### 5. Verify the connection
 
-## Setting up with Claude Code
+1. Open Claude Desktop
+2. Use the `/mcp` command - "dictionary" should appear as an available server
+3. Try creating a dictionary to test functionality
 
-Claude Code uses the `claude mcp add` command to configure MCP servers. You have three options:
+## Claude Code Setup
 
-### Option 1: Local Scope (recommended for personal use)
+Claude Code uses the `claude mcp add` command to configure MCP servers.
 
-Add the server for the current project only:
+### Installation options
 
+#### Option 1: Local Scope (current project only)
 ```bash
-claude mcp add dictionary /home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
-  -e DATABASE_PATH=/home/rick/.local/share/dictionary-mcp/dictionary.db
+claude mcp add dictionary /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+  -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
-### Option 2: User Scope (available across all projects)
-
-Add the server globally for your user:
-
+#### Option 2: User Scope (all projects)
 ```bash
-claude mcp add dictionary -s user /home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
-  -e DATABASE_PATH=/home/rick/.local/share/dictionary-mcp/dictionary.db
+claude mcp add dictionary -s user /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+  -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
-### Option 3: Project Scope (for team sharing)
-
-Add the server to `.mcp.json` for sharing with your team:
-
+#### Option 3: Project Scope (for team sharing)
 ```bash
-claude mcp add dictionary -s project /home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
-  -e DATABASE_PATH=/home/rick/.local/share/dictionary-mcp/dictionary.db
+claude mcp add dictionary -s project /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+  -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
-After adding the server, you can manage it with:
+This creates a `.mcp.json` file in your project that can be committed to version control.
+
+### Managing the server
 
 - `claude mcp list` - View all configured MCP servers
 - `claude mcp remove dictionary` - Remove the server
@@ -119,11 +128,29 @@ After adding the server, you can manage it with:
 
 ## Troubleshooting
 
-- Make sure the path to the executable is absolute (not relative)
-- Ensure the database directory exists and is writable
-- Check that the built executable has execute permissions:
+### Common issues
+
+1. **Path issues**: Use absolute paths, not relative paths
+2. **Permissions**: Ensure the executable has execute permissions:
+   ```bash
+   chmod +x /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64
+   ```
+3. **Database directory**: Verify it exists and is writable:
+   ```bash
+   mkdir -p ~/.local/share/dictionary-mcp
+   ```
+
+### Platform-specific notes
+
+- **Windows**: Use forward slashes in paths or escape backslashes
+- **macOS**: May need to allow the executable in System Preferences > Security & Privacy
+- **Linux**: Ensure the database directory has appropriate permissions
+
+### Debugging
+
+- **Claude Desktop**: Check developer console for error logs
+- **Claude Code**: Use `claude mcp list` to verify configuration
+- **Both**: Ensure the MCP server process can start independently:
   ```bash
-  chmod +x /home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64
+  /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64
   ```
-- If Claude Desktop doesn't recognize the server, check the logs in Claude Desktop's developer console
-- For Claude Code, use `claude mcp list` to verify the server is configured correctly

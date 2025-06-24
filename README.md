@@ -2,6 +2,10 @@
 
 A Model Context Protocol (MCP) server to maintain internal or specialized vocabulary. Stores words in a centralized dictionary for internal terms, acronyms, and specialized language. Built with TypeScript and Bun.
 
+## Project Status
+
+This project is in the idea phase and has not undergone extensive testing.
+
 ## Features
 
 - **📚 Multi-Dictionary Support** - Create separate dictionaries for different teams, projects, or domains
@@ -13,6 +17,8 @@ A Model Context Protocol (MCP) server to maintain internal or specialized vocabu
 - **🎨 Text Highlighting** - Highlight recognized terms in HTML or Markdown format
 
 ## Installation
+
+**Don't care and just want to add it to Claude code?** See [MCP Setup](./MCP_SETUP.md)
 
 ```bash
 # Using npx (recommended)
@@ -77,7 +83,7 @@ DATABASE_PATH=/path/to/dictionaries.db
 // Create a dictionary for your engineering team
 await dictionary_create(
   "Engineering",
-  "Technical terms used by the engineering team",
+  "Technical terms used by the engineering team"
 );
 ```
 
@@ -89,12 +95,12 @@ await term_add("Engineering", "API", "Application Programming Interface");
 await term_add(
   "Engineering",
   "CI/CD",
-  "Continuous Integration/Continuous Deployment",
+  "Continuous Integration/Continuous Deployment"
 );
 await term_add(
   "Engineering",
   "PR",
-  "Pull Request - A method of submitting contributions",
+  "Pull Request - A method of submitting contributions"
 );
 ```
 
@@ -206,7 +212,7 @@ await import_dictionary("csv", csvData);
 await text_index(
   documentText,
   "Medical",
-  "Extract medical terms, drug names, and clinical abbreviations from the following text:",
+  "Extract medical terms, drug names, and clinical abbreviations from the following text:"
 );
 ```
 
