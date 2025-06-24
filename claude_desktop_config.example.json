@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "dictionary": {
+      "command": "/home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64",
+      "args": [],
+      "env": {
+        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  }
+}

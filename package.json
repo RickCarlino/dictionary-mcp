@@ -1,0 +1,69 @@
+{
+  "name": "@dictionary/mcp",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol server for managing organizational dictionaries and terminology",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "dictionary",
+    "terminology",
+    "glossary",
+    "knowledge-management",
+    "ai",
+    "llm",
+    "claude"
+  ],
+  "author": "Rick Carlino",
+  "license": "MIT",
+  "homepage": "https://github.com/rickcarlino/dictionary-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickcarlino/dictionary-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rickcarlino/dictionary-mcp/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "src/index.ts",
+  "bin": {
+    "dictionary-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "build": "bun run scripts/build-all.ts",
+    "build:simple": "bun build src/index.ts --target=bun --outdir=dist",
+    "build:node": "bun build src/index.ts --target=node --outfile=dist/index.node.js",
+    "build:standalone": "bun build src/index.ts --compile --target=bun-linux-x64 --outfile=dist/dictionary-mcp",
+    "clean": "rm -rf dist",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "bun run build && bun run test",
+    "example:import": "bun run examples/import.ts",
+    "example:import-all": "bun run examples/import-all.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

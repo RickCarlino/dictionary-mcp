@@ -1,0 +1,45 @@
+{
+  "// Example 1": "Using the standalone Linux binary",
+  "mcpServers_example1": {
+    "dictionary": {
+      "command": "/home/rick/code/dictionary-mcp/dist/dictionary-mcp-linux-x64",
+      "args": [],
+      "env": {
+        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  },
+
+  "// Example 2": "Using Bun directly (requires Bun installed)",
+  "mcpServers_example2": {
+    "dictionary": {
+      "command": "bun",
+      "args": ["run", "/home/rick/code/dictionary-mcp/dist/index.bun.js"],
+      "env": {
+        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  },
+
+  "// Example 3": "Using Node.js (requires Node.js installed)",
+  "mcpServers_example3": {
+    "dictionary": {
+      "command": "node",
+      "args": ["/home/rick/code/dictionary-mcp/dist/index.node.js"],
+      "env": {
+        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  },
+
+  "// Example 4": "Development mode with source files",
+  "mcpServers_example4": {
+    "dictionary": {
+      "command": "bun",
+      "args": ["run", "/home/rick/code/dictionary-mcp/src/index.ts"],
+      "env": {
+        "DATABASE_PATH": "/home/rick/.local/share/dictionary-mcp/dictionary.db"
+      }
+    }
+  }
+}

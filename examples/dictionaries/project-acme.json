@@ -1,0 +1,186 @@
+{
+  "name": "Project ACME",
+  "description": "Internal terms and acronyms specific to the ACME project",
+  "terms": [
+    {
+      "term": "QRS",
+      "definitions": [
+        {
+          "definition": "Quality Review System - Our internal code review and quality assurance platform",
+          "context": "internal tools"
+        }
+      ]
+    },
+    {
+      "term": "LMZ",
+      "definitions": [
+        {
+          "definition": "Lightning Module Zero - The core authentication and authorization service",
+          "context": "services"
+        }
+      ]
+    },
+    {
+      "term": "DART",
+      "definitions": [
+        {
+          "definition": "Data Analytics and Reporting Tool - The business intelligence dashboard",
+          "context": "analytics"
+        }
+      ]
+    },
+    {
+      "term": "Phoenix",
+      "definitions": [
+        {
+          "definition": "The next-generation customer portal project",
+          "context": "projects"
+        }
+      ]
+    },
+    {
+      "term": "Nexus",
+      "definitions": [
+        {
+          "definition": "Our internal API gateway that routes requests between microservices",
+          "context": "infrastructure"
+        }
+      ]
+    },
+    {
+      "term": "Falcon",
+      "definitions": [
+        {
+          "definition": "Fast Analytics Load Controller - The real-time data processing pipeline",
+          "context": "data pipeline"
+        }
+      ]
+    },
+    {
+      "term": "Shield",
+      "definitions": [
+        {
+          "definition": "Security Hardening Infrastructure for Enterprise Load Distribution",
+          "context": "security"
+        }
+      ]
+    },
+    {
+      "term": "TOPS",
+      "definitions": [
+        {
+          "definition": "Team Operations and Planning System - Our sprint planning and tracking tool",
+          "context": "project management"
+        }
+      ]
+    },
+    {
+      "term": "Blue Team",
+      "definitions": [
+        {
+          "definition": "The infrastructure and DevOps team responsible for cloud architecture",
+          "context": "teams"
+        }
+      ]
+    },
+    {
+      "term": "Red Team",
+      "definitions": [
+        {
+          "definition": "The security team that performs penetration testing and vulnerability assessments",
+          "context": "teams"
+        }
+      ]
+    },
+    {
+      "term": "Green Team",
+      "definitions": [
+        {
+          "definition": "The sustainability and efficiency team focused on reducing resource consumption",
+          "context": "teams"
+        }
+      ]
+    },
+    {
+      "term": "ACME-1",
+      "definitions": [
+        {
+          "definition": "The original monolithic application that we're migrating from",
+          "context": "legacy"
+        }
+      ]
+    },
+    {
+      "term": "ACME-2",
+      "definitions": [
+        {
+          "definition": "The new microservices-based architecture we're migrating to",
+          "context": "current"
+        }
+      ]
+    },
+    {
+      "term": "Velocity Points",
+      "definitions": [
+        {
+          "definition": "Our custom story point system based on complexity and effort",
+          "context": "agile"
+        }
+      ]
+    },
+    {
+      "term": "Tiger Stripe",
+      "definitions": [
+        {
+          "definition": "Critical production issues that require immediate attention",
+          "context": "incident management"
+        }
+      ]
+    },
+    {
+      "term": "Sandbox",
+      "definitions": [
+        {
+          "definition": "The isolated development environment for testing new features",
+          "context": "environments"
+        }
+      ]
+    },
+    {
+      "term": "Staging",
+      "definitions": [
+        {
+          "definition": "The pre-production environment that mirrors production configuration",
+          "context": "environments"
+        }
+      ]
+    },
+    {
+      "term": "Canary",
+      "definitions": [
+        {
+          "definition": "A deployment strategy where changes are rolled out to a small subset of users first",
+          "context": "deployment"
+        }
+      ]
+    },
+    {
+      "term": "WAR Room",
+      "definitions": [
+        {
+          "definition": "Weekly Architecture Review - Our weekly meeting to discuss system design decisions",
+          "context": "meetings"
+        }
+      ]
+    },
+    {
+      "term": "DRB",
+      "definitions": [
+        {
+          "definition": "Design Review Board - The committee that approves major architectural changes",
+          "context": "governance"
+        }
+      ]
+    }
+  ]
+}

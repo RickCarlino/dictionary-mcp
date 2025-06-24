@@ -1,0 +1,194 @@
+{
+  "name": "Business & Finance",
+  "description": "Business and financial terminology commonly used in corporate environments",
+  "terms": [
+    {
+      "term": "ROI",
+      "definitions": [
+        {
+          "definition": "Return on Investment - A measure of the profitability of an investment",
+          "context": "finance"
+        },
+        {
+          "definition": "The ratio of net profit to the cost of investment, usually expressed as a percentage",
+          "context": "metrics"
+        }
+      ]
+    },
+    {
+      "term": "KPI",
+      "definitions": [
+        {
+          "definition": "Key Performance Indicator - A measurable value that demonstrates how effectively a company is achieving key business objectives",
+          "context": "metrics"
+        }
+      ]
+    },
+    {
+      "term": "P&L",
+      "definitions": [
+        {
+          "definition": "Profit and Loss statement - A financial statement that summarizes revenues, costs, and expenses",
+          "context": "accounting"
+        }
+      ]
+    },
+    {
+      "term": "EBITDA",
+      "definitions": [
+        {
+          "definition": "Earnings Before Interest, Taxes, Depreciation, and Amortization - A measure of a company's overall financial performance",
+          "context": "finance"
+        }
+      ]
+    },
+    {
+      "term": "B2B",
+      "definitions": [
+        {
+          "definition": "Business to Business - Commerce transactions between businesses",
+          "context": "business model"
+        }
+      ]
+    },
+    {
+      "term": "B2C",
+      "definitions": [
+        {
+          "definition": "Business to Consumer - Commerce transactions between a business and individual consumers",
+          "context": "business model"
+        }
+      ]
+    },
+    {
+      "term": "SLA",
+      "definitions": [
+        {
+          "definition": "Service Level Agreement - A contract that defines the level of service expected from a vendor",
+          "context": "contracts"
+        }
+      ]
+    },
+    {
+      "term": "ARR",
+      "definitions": [
+        {
+          "definition": "Annual Recurring Revenue - The value of recurring revenue normalized to a one-year period",
+          "context": "saas metrics"
+        }
+      ]
+    },
+    {
+      "term": "MRR",
+      "definitions": [
+        {
+          "definition": "Monthly Recurring Revenue - The predictable revenue that a business can expect every month",
+          "context": "saas metrics"
+        }
+      ]
+    },
+    {
+      "term": "CAC",
+      "definitions": [
+        {
+          "definition": "Customer Acquisition Cost - The cost of acquiring a new customer",
+          "context": "marketing"
+        }
+      ]
+    },
+    {
+      "term": "LTV",
+      "definitions": [
+        {
+          "definition": "Lifetime Value - The total revenue expected from a customer over their entire relationship with a company",
+          "context": "customer metrics"
+        }
+      ]
+    },
+    {
+      "term": "Churn Rate",
+      "definitions": [
+        {
+          "definition": "The percentage of customers who stop using a product or service during a given time period",
+          "context": "retention"
+        }
+      ]
+    },
+    {
+      "term": "MVP",
+      "definitions": [
+        {
+          "definition": "Minimum Viable Product - A product with just enough features to satisfy early customers",
+          "context": "product development"
+        }
+      ]
+    },
+    {
+      "term": "IPO",
+      "definitions": [
+        {
+          "definition": "Initial Public Offering - The first time a company offers shares to the public",
+          "context": "finance"
+        }
+      ]
+    },
+    {
+      "term": "VC",
+      "definitions": [
+        {
+          "definition": "Venture Capital - Financing provided to startups and small businesses with growth potential",
+          "context": "funding"
+        }
+      ]
+    },
+    {
+      "term": "PE",
+      "definitions": [
+        {
+          "definition": "Private Equity - Investment in companies not publicly traded on a stock exchange",
+          "context": "finance"
+        },
+        {
+          "definition": "Price to Earnings ratio - A valuation metric comparing share price to earnings per share",
+          "context": "stock market"
+        }
+      ]
+    },
+    {
+      "term": "YoY",
+      "definitions": [
+        {
+          "definition": "Year over Year - Comparing metrics from one year to the same period in the previous year",
+          "context": "analysis"
+        }
+      ]
+    },
+    {
+      "term": "QoQ",
+      "definitions": [
+        {
+          "definition": "Quarter over Quarter - Comparing metrics from one quarter to the previous quarter",
+          "context": "analysis"
+        }
+      ]
+    },
+    {
+      "term": "CAGR",
+      "definitions": [
+        {
+          "definition": "Compound Annual Growth Rate - The mean annual growth rate over a specified period",
+          "context": "growth metrics"
+        }
+      ]
+    },
+    {
+      "term": "NPS",
+      "definitions": [
+        {
+          "definition": "Net Promoter Score - A metric for assessing customer loyalty and satisfaction",
+          "context": "customer experience"
+        }
+      ]
+    }
+  ]
+}

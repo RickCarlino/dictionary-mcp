@@ -1,0 +1,194 @@
+{
+  "name": "Engineering Terms",
+  "description": "Common engineering and technical terminology used in software development",
+  "terms": [
+    {
+      "term": "API",
+      "definitions": [
+        {
+          "definition": "Application Programming Interface - A set of protocols and tools for building software applications",
+          "context": "general"
+        },
+        {
+          "definition": "A contract between different software components that defines how they can communicate",
+          "context": "technical"
+        }
+      ]
+    },
+    {
+      "term": "CI/CD",
+      "definitions": [
+        {
+          "definition": "Continuous Integration/Continuous Deployment - Automated processes for integrating code changes and deploying to production",
+          "context": "devops"
+        }
+      ]
+    },
+    {
+      "term": "REST",
+      "definitions": [
+        {
+          "definition": "Representational State Transfer - An architectural style for designing networked applications",
+          "context": "web"
+        }
+      ]
+    },
+    {
+      "term": "GraphQL",
+      "definitions": [
+        {
+          "definition": "A query language for APIs and a runtime for executing those queries with your existing data",
+          "context": "api"
+        }
+      ]
+    },
+    {
+      "term": "Microservices",
+      "definitions": [
+        {
+          "definition": "An architectural style that structures an application as a collection of small, independent services",
+          "context": "architecture"
+        }
+      ]
+    },
+    {
+      "term": "Docker",
+      "definitions": [
+        {
+          "definition": "A platform for developing, shipping, and running applications in containers",
+          "context": "containerization"
+        }
+      ]
+    },
+    {
+      "term": "Kubernetes",
+      "definitions": [
+        {
+          "definition": "An open-source container orchestration platform for automating deployment, scaling, and management",
+          "context": "orchestration"
+        }
+      ]
+    },
+    {
+      "term": "TDD",
+      "definitions": [
+        {
+          "definition": "Test-Driven Development - A software development approach where tests are written before the code",
+          "context": "methodology"
+        }
+      ]
+    },
+    {
+      "term": "PR",
+      "definitions": [
+        {
+          "definition": "Pull Request - A method of submitting contributions to a project",
+          "context": "git"
+        },
+        {
+          "definition": "Peer Review - The process of reviewing code changes before merging",
+          "context": "process"
+        }
+      ]
+    },
+    {
+      "term": "SaaS",
+      "definitions": [
+        {
+          "definition": "Software as a Service - A software delivery model where applications are hosted and provided over the internet",
+          "context": "business model"
+        }
+      ]
+    },
+    {
+      "term": "OAuth",
+      "definitions": [
+        {
+          "definition": "Open Authorization - An open standard for access delegation, commonly used for token-based authentication",
+          "context": "security"
+        }
+      ]
+    },
+    {
+      "term": "JWT",
+      "definitions": [
+        {
+          "definition": "JSON Web Token - A compact, URL-safe means of representing claims to be transferred between two parties",
+          "context": "authentication"
+        }
+      ]
+    },
+    {
+      "term": "CORS",
+      "definitions": [
+        {
+          "definition": "Cross-Origin Resource Sharing - A mechanism that allows restricted resources on a web page to be requested from another domain",
+          "context": "web security"
+        }
+      ]
+    },
+    {
+      "term": "SSL/TLS",
+      "definitions": [
+        {
+          "definition": "Secure Sockets Layer/Transport Layer Security - Cryptographic protocols for secure communication over networks",
+          "context": "security"
+        }
+      ]
+    },
+    {
+      "term": "CRUD",
+      "definitions": [
+        {
+          "definition": "Create, Read, Update, Delete - The four basic operations of persistent storage",
+          "context": "database"
+        }
+      ]
+    },
+    {
+      "term": "ORM",
+      "definitions": [
+        {
+          "definition": "Object-Relational Mapping - A technique for converting data between incompatible type systems in OOP languages",
+          "context": "database"
+        }
+      ]
+    },
+    {
+      "term": "SQL",
+      "definitions": [
+        {
+          "definition": "Structured Query Language - A domain-specific language for managing relational databases",
+          "context": "database"
+        }
+      ]
+    },
+    {
+      "term": "NoSQL",
+      "definitions": [
+        {
+          "definition": "Not Only SQL - Database systems that store and retrieve data without using tabular relations",
+          "context": "database"
+        }
+      ]
+    },
+    {
+      "term": "Git",
+      "definitions": [
+        {
+          "definition": "A distributed version control system for tracking changes in source code",
+          "context": "version control"
+        }
+      ]
+    },
+    {
+      "term": "Agile",
+      "definitions": [
+        {
+          "definition": "An iterative approach to software development emphasizing flexibility and collaboration",
+          "context": "methodology"
+        }
+      ]
+    }
+  ]
+}
