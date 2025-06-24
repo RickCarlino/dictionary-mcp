@@ -28,7 +28,6 @@ This guide explains how to set up the Dictionary MCP server with Claude Desktop 
 
 ### 1. Locate your configuration file
 
-- **Linux**: `~/.config/Claude/claude_desktop_config.json`
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
@@ -40,7 +39,7 @@ Edit your `claude_desktop_config.json` file:
 {
   "mcpServers": {
     "dictionary": {
-      "command": "/path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64",
+      "command": "/path/to/dictionary-mcp/dist/dictionary-mcp-[platform]",
       "args": [],
       "env": {
         "DATABASE_PATH": "~/.local/share/dictionary-mcp/dictionary.db"
@@ -50,7 +49,10 @@ Edit your `claude_desktop_config.json` file:
 }
 ```
 
-**Note**: Replace `/path/to/dictionary-mcp` with the actual path to your project directory.
+**Notes**: 
+- Replace `/path/to/dictionary-mcp` with the actual path to your project directory
+- Replace `[platform]` with your platform executable (e.g., `darwin-x64` for macOS, `win32-x64` for Windows)
+- Use absolute paths for the command
 
 ### 3. Alternative runtime options
 
@@ -91,8 +93,8 @@ After saving the configuration, restart Claude Desktop to load the MCP server.
 ### 5. Verify the connection
 
 1. Open Claude Desktop
-2. Use the `/mcp` command - "dictionary" should appear as an available server
-3. Try creating a dictionary to test functionality
+2. The MCP server should connect automatically
+3. Try using dictionary tools to test functionality
 
 ## Claude Code Setup
 
@@ -102,29 +104,38 @@ Claude Code uses the `claude mcp add` command to configure MCP servers.
 
 #### Option 1: Local Scope (current project only)
 ```bash
-claude mcp add dictionary /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+claude mcp add dictionary /path/to/dictionary-mcp/dist/dictionary-mcp-[platform] \
   -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
-#### Option 2: User Scope (all projects)
+#### Option 2: User Scope (available across all your projects)
 ```bash
-claude mcp add dictionary -s user /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+claude mcp add dictionary --scope user /path/to/dictionary-mcp/dist/dictionary-mcp-[platform] \
   -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
 #### Option 3: Project Scope (for team sharing)
 ```bash
-claude mcp add dictionary -s project /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64 \
+claude mcp add dictionary --scope project /path/to/dictionary-mcp/dist/dictionary-mcp-[platform] \
   -e DATABASE_PATH=~/.local/share/dictionary-mcp/dictionary.db
 ```
 
 This creates a `.mcp.json` file in your project that can be committed to version control.
 
+**Note**: Replace `[platform]` with your platform executable (e.g., `linux-x64`, `darwin-x64`, `win32-x64`)
+
 ### Managing the server
 
 - `claude mcp list` - View all configured MCP servers
 - `claude mcp remove dictionary` - Remove the server
-- `/mcp` command in Claude Code - Interact with MCP servers
+- `/mcp` command in Claude Code - Connect/disconnect and view MCP server status
+
+### Importing from Claude Desktop
+
+If you have servers configured in Claude Desktop, you can import them:
+```bash
+claude mcp add --from-claude-desktop dictionary
+```
 
 ## Troubleshooting
 
@@ -144,13 +155,15 @@ This creates a `.mcp.json` file in your project that can be committed to version
 
 - **Windows**: Use forward slashes in paths or escape backslashes
 - **macOS**: May need to allow the executable in System Preferences > Security & Privacy
-- **Linux**: Ensure the database directory has appropriate permissions
+- **Linux**: Available only through Claude Code (not Claude Desktop)
+- **All platforms**: Ensure the database directory has appropriate permissions
 
 ### Debugging
 
-- **Claude Desktop**: Check developer console for error logs
-- **Claude Code**: Use `claude mcp list` to verify configuration
+- **Claude Desktop**: Check logs in platform-specific directories for connection issues
+- **Claude Code**: Use `claude mcp list` to verify configuration and connection status
 - **Both**: Ensure the MCP server process can start independently:
   ```bash
-  /path/to/dictionary-mcp/dist/dictionary-mcp-linux-x64
+  /path/to/dictionary-mcp/dist/dictionary-mcp-[platform]
   ```
+- **Environment**: Set `MCP_TIMEOUT` to increase startup timeout if needed

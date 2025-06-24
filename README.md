@@ -2,6 +2,34 @@
 
 A Model Context Protocol (MCP) server to maintain internal or specialized vocabulary. Stores words in a centralized dictionary for internal terms, acronyms, and specialized language. Built with TypeScript and Bun.
 
+## Demo
+
+```
+> Hey can you add "strategery" to the dictionary?
+
+● I'll add "strategery" to the dictionary for you. Let me first check what dictionaries are available, then add the term.
+  ⎿  []
+
+● I need to create a dictionary first since there are none available. Let me create a default dictionary and then add the term.
+
+● dictionary:dictionary_create (MCP)(name: "General", description: "General terms and vocabulary")
+  ⎿  {                                              
+       "id": "8115caf1-9b08-42ab-89c8-603250d28151",
+       "name": "General",
+     … +4 lines (ctrl+r to expand)
+
+● Now I'll add "strategery" to the dictionary.
+
+● dictionary:term_add (MCP)(dictionary: "General", term: "strategery", definition: "A humorous blend of 'strategy' and 'strategic', popularized by a Saturday Night Live sketch parodying George W. Bush. Often used jokingly to refer
+                           to political or business strategy.")
+  ⎿  {                                                         
+       "id": "4d694dd4-a89d-463f-ba66-0c281064410b",
+       "dictionary_id": "8115caf1-9b08-42ab-89c8-603250d28151",
+     … +11 lines (ctrl+r to expand)
+
+● Done! I've added "strategery" to the General dictionary with its definition.
+```
+
 ## Project Status
 
 This project is in the idea phase and has not undergone extensive testing.
